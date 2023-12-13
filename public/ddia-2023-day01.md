@@ -69,4 +69,10 @@ Qiita に投稿している記事は会社と直接関係ありませんが、�
 
 https://qiita.com/advent-calendar/2023/kayac-group
 
+# GitHub にて修正リクエストを受け付けています
+
+この記事は GitHub で管理しています。以下のリポジトリに Pull Request を送っていただければ、記事内容の修正を検討いたします。（もちろんコメント欄に書いていただいても構いません。）
+
+https://github.com/ebi-yade/qiita
+
 [^1]: 実際、現時点であまり読み進んでいないのは事実ですが......。
