@@ -1,10 +1,10 @@
 ---
 title: 【DDIA 読破】監訳者まえがき
 tags:
-  - 'DDIA'
+  - DDIA
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-13T23:48:17+09:00'
+id: 49671384a9be18d91054
 organization_url_name: null
 slide: false
 ignorePublish: false
