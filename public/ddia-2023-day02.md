@@ -7,7 +7,7 @@ tags:
   - 読書感想文
   - DDIA
 private: false
-updated_at: '2023-12-15T18:06:24+09:00'
+updated_at: '2023-12-15T18:10:24+09:00'
 id: 232bebba0f104f9e5c40
 organization_url_name: null
 slide: false
