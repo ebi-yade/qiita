@@ -1,16 +1,14 @@
 ---
 title: 【DDIA 読破】1章 信頼性、スケーラビリティ、メンテナンス性に優れたアプリケーション
 tags:
-# 連載共通
   - 技術書
   - 書籍
+  - 信頼性
   - 読書感想文
   - DDIA
-# 記事固有
-  - 信頼性
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-15T18:06:24+09:00'
+id: 232bebba0f104f9e5c40
 organization_url_name: null
 slide: false
 ignorePublish: false
