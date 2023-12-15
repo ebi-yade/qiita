@@ -13,7 +13,7 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-この記事は、[気合いで DDIA 読破 Advent Calendar 2023](https://qiita.com/advent-calendar/2023/ddia) 1日目の記事です。
+この記事は、[気合いで DDIA 読破 Advent Calendar 2023](https://qiita.com/advent-calendar/2023/ddia) 2日目の記事です。
 
 なお、この連載にて「本書」とは以下の書籍を指します。私の読書メモが必ずしも筆者の意図を正確に反映しているとは限りませんので、実際に購入されることをお勧めします。
 
@@ -145,6 +145,12 @@ Qiita に投稿している記事は会社と直接関係ありませんが、�
 どんどん面白い記事が投稿されていますので、ぜひご覧ください！
 
 https://qiita.com/advent-calendar/2023/kayac-group
+
+# 修正リクエストを受け付けています
+
+この記事は GitHub で管理しています。以下のリポジトリに Pull Request を送っていただければ、記事内容の修正を検討いたします。（コメント欄に書いていただいても構いません。）
+
+https://github.com/ebi-yade/qiita/blob/main/public/ddia-2023-day02.md
 
 [^1]: なお、（少なくとも日本語版には）引用に関する詳細なガイドラインが記載されていないため、このような方針としました。
 [^2]: Redis と Apache Kafka を例に出しています。
