@@ -76,6 +76,6 @@ https://qiita.com/advent-calendar/2023/kayac-group
 
 この記事は GitHub で管理しています。以下のリポジトリに Pull Request を送っていただければ、記事内容の修正を検討いたします。（コメント欄に書いていただいても構いません。）
 
-https://github.com/ebi-yade/qiita/blob/main/public/49671384a9be18d91054.md
+https://github.com/ebi-yade/qiita/blob/main/public/ddia-2023-day01.md
 
 [^1]: 実際、現時点であまり読み進んでいないのは事実ですが......。
