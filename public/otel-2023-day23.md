@@ -82,7 +82,8 @@ type SamplingParameters struct {
 少しだけ俯瞰してみると、一般的な呼び出しにおいては以下のような関係になっています。
 
 ```
-(あなたのアプリ) -> trace.Tracer.Start 実態は sdktrace.tracer.Start -> sdktrace.tracer.newSpan
+(あなたのアプリ) -> trace.Tracer.Start
+                (実態は sdktrace.tracer.Start) -> sdktrace.tracer.newSpan
 ```
 
 そして大事なのが、`SamplingParameters` の中身です。 `newSpan` 内のコードを抜粋すると、こんな感じです。
@@ -183,7 +184,7 @@ func configureSamplersForParentBased(samplers []ParentBasedSamplerOption) sample
 
 私が働いている[面白法人カヤック](https://www.kayac.com/)でも、Qiita のアドベントカレンダー企画をやっています。
 
-Qiita に投稿している記事は会社と直接関係ありませんが、企画の運営をしているのは私です。
+なんと、企画の運営をしているのは私です。
 
 おかげさまで、今年もバラエティ豊かなエントリが出揃いました。ぜひご確認ください！
 
