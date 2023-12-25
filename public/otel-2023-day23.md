@@ -1,10 +1,10 @@
 ---
 title: OpenTelemetry の Sampler を Go で実装するときに見るところ
 tags:
-  - 'OpenTelemetry'
+  - opentelemetry
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-26T00:47:01+09:00'
+id: c497dac850ac867d0726
 organization_url_name: null
 slide: false
 ignorePublish: false
