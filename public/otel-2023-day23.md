@@ -40,6 +40,28 @@ Go においては、`sdktrace` の [Sampler インタフェース](https://pkg.
 
 ですので、そのような高度なことをバキバキにやっている方々には、今回の記事はあまり参考にならないかもしれません。あくまでもアプリと同一のプロセスで動作する Sampler についての話です。
 
+なお、この記事では OpenTelemetry の Go 実装に関するコードや型定義を引用致しますが、これらは Apache 2.0 ライセンスで提供されています。より詳細には[こちら](https://github.com/open-telemetry/opentelemetry-go/blob/main/LICENSE)をご参照ください。
+
+<details><summary> ライセンス情報(Apache 2.0) </summary>
+
+```
+Copyright The OpenTelemetry Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
+</details>
+
 ## Godoc に目を通す
 
 そんなこんなで [Sampler インタフェース](https://pkg.go.dev/go.opentelemetry.io/otel/sdk/trace#Sampler) のドキュメントを見てみると、これでもかとばかりに `ShouldSample` というメソッドがありまして、要するに本丸です。読んで字の如く「`SamplingParameters` からサンプルするかどうかを決めてくれや」という話です。
@@ -56,7 +78,7 @@ type Sampler interface {
 }
 ```
 
-そこで [SamplingParameters 構造体](https://pkg.go.dev/go.opentelemetry.io/otel/sdk/trace#SamplingParameters) を除いてみると、結構魅力的なメンバが見当たります。
+そこで [SamplingParameters 構造体](https://pkg.go.dev/go.opentelemetry.io/otel/sdk/trace#SamplingParameters) を覗いてみると、結構魅力的なメンバが見当たります。
 
 ```go
 type SamplingParameters struct {
@@ -128,26 +150,6 @@ samplingResult := tr.provider.sampler.ShouldSample(SamplingParameters{
 強い言葉を使ってしまって恐縮ではあるんですが、そもそも Sampler は通常グローバルに運用される TracerProvider に登録するものなので、「特定のURLへのアクセスでは常にサンプルしたい」ぐらいの話では `ParentBased` を拡張して使うなり、同様のものを再発明することになります。繰り返しますが、**「何でもかんでも `AlwaysSample`」以外は `ParentBased` なんです。**
 
 ということで、ユーザー視点で ParentBased を爆速理解していきましょう。早い話、 [ソースコード](https://github.com/open-telemetry/opentelemetry-go/blob/885210bf33238f8c6cc94c3f3711b0036fbe77b1/sdk/trace/sampling.go#L170-L195) を読んでください。16行なので貼り付けちゃいます。
-
-<details><summary> ライセンス情報(Apache 2.0) </summary>
-
-```
-Copyright The OpenTelemetry Authors
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
-
-</details>
 
 ```go
 func ParentBased(root Sampler, samplers ...ParentBasedSamplerOption) Sampler {
